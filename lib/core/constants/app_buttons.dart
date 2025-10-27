@@ -1,4 +1,5 @@
 import 'package:bank_app/core/constants/constant.dart';
+import 'package:bank_app/core/extensions/theme_extensions.dart';
 import 'package:flutter/material.dart';
 
 class AppButtons extends StatelessWidget {
@@ -27,7 +28,9 @@ class AppButtons extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: context.textTheme.titleSmall?.copyWith(color: textColor),
+            style: context.textTheme.titleSmall?.copyWith(
+              color: AppColor.white,
+            ),
           ),
         ),
       ),
