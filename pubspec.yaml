@@ -39,6 +39,8 @@ dependencies:
   flutter_secure_storage: ^9.2.4
   flutter_svg: ^2.2.1
   iconsax_plus: ^1.0.0
+  fluentui_system_icons: ^1.1.273
+  hugeicons: ^1.1.1
 
 dev_dependencies:
   flutter_test:
