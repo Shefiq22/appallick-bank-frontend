@@ -8,6 +8,7 @@ class AppColor {
   static const Color blue = Color(0xff0066FF);
   static const Color white = Color(0xffFFFFFF);
   static const Color darkGrey = Color(0xffA2A2A7);
+  static const Color lightGrey = Color(0xffF4F4F4);
 
   static Color getSplashColor(BuildContext context) {
     return context.isDark ? primary : white;

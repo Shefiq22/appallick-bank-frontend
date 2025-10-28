@@ -23,7 +23,7 @@ class AppclickBankRoot extends StatelessWidget {
       title: "Appclick Bank",
       debugShowCheckedModeBanner: false,
       routes: AppRouter().route,
-      initialRoute: "splash",
+      initialRoute: "login",
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: Provider.of<ThemeProvider>(context).themeMode,

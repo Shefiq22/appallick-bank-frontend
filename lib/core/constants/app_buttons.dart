@@ -30,6 +30,7 @@ class AppButtons extends StatelessWidget {
             text,
             style: context.textTheme.titleSmall?.copyWith(
               color: AppColor.white,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ),
