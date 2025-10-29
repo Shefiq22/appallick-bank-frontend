@@ -62,4 +62,3 @@ class ImageWidget extends StatelessWidget {
     }
   }
 }
-}
