@@ -2,7 +2,8 @@ import 'package:bank_app/core/router.dart';
 import 'package:bank_app/core/theme/theme.dart';
 import 'package:bank_app/provider/provider.dart';
 import 'package:bank_app/provider/theme_provider.dart';
-import 'package:bank_app/screens/splash.dart';
+import 'package:bank_app/screens/onboarding.dart';
+import 'package:bank_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

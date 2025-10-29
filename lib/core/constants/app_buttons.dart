@@ -13,6 +13,7 @@ class AppButtons extends StatelessWidget {
     required this.text,
     this.backgroundColor = AppColor.blue,
     this.textColor = AppColor.white,
+    TextStyle? style,
   });
 
   @override
@@ -28,7 +29,10 @@ class AppButtons extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: context.textTheme.titleSmall?.copyWith(color: textColor),
+            style: context.textTheme.titleSmall?.copyWith(
+              color: AppColor.white,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ),
