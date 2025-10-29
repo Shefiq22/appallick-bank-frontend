@@ -1,15 +1,19 @@
 import 'package:bank_app/core/constants/constant.dart';
 import 'package:bank_app/core/extensions/num_extension.dart';
 import 'package:bank_app/core/extensions/theme_extensions.dart';
+import 'package:bank_app/provider/auth_provider.dart';
 import 'package:bank_app/screens/widgets/app_textfield.dart';
 import 'package:bank_app/screens/widgets/widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LogIn extends StatelessWidget {
   const LogIn({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+    var authProvider = context.read<AuthProvider>();
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
@@ -45,10 +49,21 @@ class LogIn extends StatelessWidget {
             ),
             20.getHeightWhiteSpacing,
             Form(
+              key: formKey,
               child: Column(
                 spacing: 10,
                 children: [
                   AppTextfield(
+                    controller: authProvider.emailController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Email is required";
+                      } else if (!value.contains("@") || !value.contains(".")) {
+                        return "Enter Valid Email";
+                      } else {
+                        return null;
+                      }
+                    },
                     label: "Email Address",
                     decoration: InputDecoration(
                       prefixIcon: Padding(
@@ -60,6 +75,16 @@ class LogIn extends StatelessWidget {
                   ),
                   5.getHeightWhiteSpacing,
                   AppTextfield(
+                    controller: authProvider.passwordController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Password is required";
+                      } else if (value.length < 6) {
+                        return "Password must not be less than 6 characters";
+                      } else {
+                        return null;
+                      }
+                    },
                     label: "Password",
                     decoration: InputDecoration(
                       prefixIcon: Padding(

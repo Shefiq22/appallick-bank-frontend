@@ -41,6 +41,7 @@ dependencies:
   iconsax_plus: ^1.0.0
   fluentui_system_icons: ^1.1.273
   hugeicons: ^1.1.1
+  flint_client: ^0.0.1+2
 
 dev_dependencies:
   flutter_test:

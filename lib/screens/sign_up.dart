@@ -1,14 +1,17 @@
 import 'package:bank_app/core/constants/constant.dart';
 import 'package:bank_app/core/extensions/num_extension.dart';
 import 'package:bank_app/core/extensions/theme_extensions.dart';
+import 'package:bank_app/provider/auth_provider.dart';
 import 'package:bank_app/screens/widgets/widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var auth = context.read<AuthProvider>();
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
@@ -48,6 +51,16 @@ class SignUp extends StatelessWidget {
                 spacing: 10,
                 children: [
                   AppTextfield(
+                    controller: auth.nameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Name is required";
+                      } else if (value.length < 3) {
+                        return "Name must not be less than 3 characters";
+                      } else {
+                        return null;
+                      }
+                    },
                     label: "Full Name",
                     decoration: InputDecoration(
                       prefixIcon: Padding(
@@ -59,6 +72,16 @@ class SignUp extends StatelessWidget {
                   ),
                   5.getHeightWhiteSpacing,
                   AppTextfield(
+                    controller: auth.phoneController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Phone Number is required";
+                      } else if (value.length != 14) {
+                        return "Phone number must be in +234 format";
+                      } else {
+                        return null;
+                      }
+                    },
                     label: "Phone Number",
                     decoration: InputDecoration(
                       prefixIcon: Padding(
@@ -70,6 +93,16 @@ class SignUp extends StatelessWidget {
                   ),
                   5.getHeightWhiteSpacing,
                   AppTextfield(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Email is required";
+                      } else if (!value.contains("@") || !value.contains(".")) {
+                        return "Enter Valid Email";
+                      } else {
+                        return null;
+                      }
+                    },
+                    controller: auth.emailController,
                     label: "Email Address",
                     decoration: InputDecoration(
                       prefixIcon: Padding(
@@ -81,6 +114,16 @@ class SignUp extends StatelessWidget {
                   ),
                   5.getHeightWhiteSpacing,
                   AppTextfield(
+                    controller: auth.passwordController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Password is required";
+                      } else if (value.length < 6) {
+                        return "Password must not be less than 6 characters";
+                      } else {
+                        return null;
+                      }
+                    },
                     label: "Password",
                     decoration: InputDecoration(
                       prefixIcon: Padding(
