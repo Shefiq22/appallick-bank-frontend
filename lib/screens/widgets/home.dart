@@ -24,11 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
         child: Column(
           children: [
+     
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 GestureDetector(
                   onTap: () {
+                  
                   },
                   child: CircleAvatar(
                     radius: 30,
@@ -72,9 +74,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
             ImageWidget(imagePath: AppImages.card),
           ],
-          
-
-
         ),
       ),
     );

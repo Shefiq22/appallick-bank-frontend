@@ -1,4 +1,3 @@
-import 'package:bank_app/screens/log_in.dart';
 import 'package:bank_app/screens/screens.dart';
 import 'package:bank_app/screens/widgets/home.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ class AppRouter {
     "splash": (BuildContext context) => Splash(),
     "home" : (BuildContext context) => HomeScreen(),
     "login": (BuildContext context) => LogIn(),
+    "signup": (BuildContext context) => SignUp(),
     
   };
 }
