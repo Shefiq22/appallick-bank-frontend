@@ -31,8 +31,6 @@ class Splash extends StatelessWidget {
           ),
         ),
       ),
-    return Scaffold(
-      
     );
   }
 }
