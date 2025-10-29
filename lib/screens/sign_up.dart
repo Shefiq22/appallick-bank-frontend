@@ -11,6 +11,7 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
     var auth = context.read<AuthProvider>();
     return Scaffold(
       body: Padding(
@@ -47,6 +48,7 @@ class SignUp extends StatelessWidget {
             ),
             20.getHeightWhiteSpacing,
             Form(
+              key: formKey,
               child: Column(
                 spacing: 10,
                 children: [
