@@ -8,8 +8,8 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/onboarding');
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(context, 'onboardinig');
     });
     return Scaffold(
       body: Container(
@@ -18,16 +18,7 @@ class Splash extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ImageWidget(imagePath: AppImages.logo),
-              // Text(
-              //   "Appclick Bank",
-              //   style: context.textTheme.titleLarge?.copyWith(
-              //     color: AppColor.textColor(context),
-              //     fontWeight: FontWeight.bold,
-              //   ),
-              // ),
-            ],
+            children: [ImageWidget(imagePath: AppImages.logo)],
           ),
         ),
       ),

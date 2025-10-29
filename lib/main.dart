@@ -2,13 +2,13 @@ import 'package:bank_app/core/router.dart';
 import 'package:bank_app/core/theme/theme.dart';
 import 'package:bank_app/provider/provider.dart';
 import 'package:bank_app/provider/theme_provider.dart';
-import 'package:bank_app/screens/onboarding.dart';
-import 'package:bank_app/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(BankAppRoot());
+  runApp(
+    MultiProvider(providers: AppProvider().providers, child: BankAppRoot()),
+  );
 }
 
 class BankAppRoot extends StatelessWidget {
@@ -18,7 +18,7 @@ class BankAppRoot extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: AppRouter().route,
-      initialRoute: "Onboarding",
+      initialRoute: "splash",
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: Provider.of<ThemeProvider>(context).themeMode,
