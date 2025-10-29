@@ -6,4 +6,8 @@ class AppImages {
   static const String board2 = "${_imagePath}board2.svg";
   static const String board3 = "${_imagePath}board3.svg";
   static const String board4 = "${_imagePath}board4.svg";
+  static const String email = "${_imagePath}Email.png";
+  static const String lock = "${_imagePath}Lock.png";
+  static const String user = "${_imagePath}User.png";
+  static const String phone = "${_imagePath}Phone.png";
 }
