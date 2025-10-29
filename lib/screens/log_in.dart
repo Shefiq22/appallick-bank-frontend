@@ -131,5 +131,6 @@ class LogIn extends StatelessWidget {
         ),
       ),
     );
+    return Scaffold();
   }
 }
